@@ -125,7 +125,7 @@ function createSparkles(target, isJesus) {
 function playWrongVideo() {
 	playErrorFeedback();
 
-	videoEl.src = "wrong.mp4";
+	videoEl.src = "https://achimari.github.io/Present/videos/wrong.mp4";
 	videoEl.play();
 
 	videoEl.onended = () => {
