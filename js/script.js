@@ -1,5 +1,5 @@
 const steps = [
-	{ video: "https://achimari.github.io/Present/videos/1.MP4", answers: ["кухня", "иисус"] },
+	{ video: "https://achimari.github.io/Present/videos/1.mp4", answers: ["кухня", "иисус"] },
 	{ video: "https://achimari.github.io/Present/videos/2.MP4", answers: ["ванная", "иисус"] },
 	{ video: "https://achimari.github.io/Present/videos/3.MP4", answers: ["лестница", "иисус"] },
 	{ video: "https://achimari.github.io/Present/videos/4.MP4", answers: ["коробка", "иисус"] }
@@ -20,11 +20,16 @@ bgMusic.volume = 0.4;
 const errorSound = new Audio("error.mp3");
 errorSound.preload = "auto";
 
-document.addEventListener("click", () => {
+const overlay = document.getElementById("videoOverlay");
+
+overlay.addEventListener("click", () => {
 	if (firstInteraction) return;
 	firstInteraction = true;
 
-	bgMusic.play().catch(() => {});
+	overlay.style.display = "none";
+
+	videoEl.muted = false;
+	videoEl.src = steps[0].video;
 
 	videoEl.play().catch(() => {});
 });
