@@ -1,0 +1,281 @@
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	margin: 0;
+	background: radial-gradient(circle at top, #1b1b1b, #000);
+	color: #fff;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 100%;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	animation: fadeIn 0.6s ease;
+}
+
+video {
+	width: 100%;
+	border-radius: 14px;
+	background: #000;
+	box-shadow:
+		0 10px 30px rgba(0, 0, 0, 0.8),
+		0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	margin: 0;
+	background: #000;
+	color: #fff;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+video {
+	flex: 1;
+	width: 100%;
+	object-fit: cover;
+	background: #000;
+}
+
+input {
+	width: calc(100% - 32px);
+	margin: 12px 16px 8px;
+	padding: 16px;
+	font-size: 42px;
+	border-radius: 14px;
+	border: none;
+	background: rgba(255, 255, 255, 0.12);
+	color: #fff;
+	outline: none;
+}
+
+input::placeholder {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+	background: rgba(255, 255, 255, 0.18);
+}
+
+button {
+	margin: 0 16px 20px;
+	padding: 16px;
+	font-size: 42px;
+	font-weight: 600;
+	border-radius: 16px;
+	border: none;
+	background: linear-gradient(135deg, #ff6a00, #ff9500);
+	color: #000;
+	box-shadow: 0 10px 30px rgba(255, 149, 0, 0.45);
+	cursor: pointer;
+	transition: transform 0.15s ease;
+}
+
+button:active {
+	transform: scale(0.96);
+}
+
+
+.container.success {
+	animation: successFlash 0.5s ease;
+}
+
+input.success {
+	box-shadow:
+		0 0 0 2px rgba(0, 255, 140, 0.6),
+		0 0 25px rgba(0, 255, 140, 0.6);
+	background: rgba(0, 255, 140, 0.15);
+	animation: inputPop 0.3s ease;
+}
+
+button.success {
+	background: linear-gradient(135deg, #00ff8c, #00d977);
+	box-shadow: 0 10px 30px rgba(0, 255, 140, 0.6);
+	animation: buttonPulse 0.4s ease;
+}
+
+video.success {
+	box-shadow:
+		0 0 0 2px rgba(0, 255, 140, 0.5),
+		0 0 40px rgba(0, 255, 140, 0.4);
+}
+
+@keyframes successFlash {
+	from {
+		background: rgba(0, 255, 140, 0.15);
+	}
+	to {
+		background: transparent;
+	}
+}
+
+@keyframes inputPop {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes buttonPulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.08);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.sparkle {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: radial-gradient(circle, #00ff8c, transparent);
+	animation: sparkleMove 1.2s ease-out forwards;
+	pointer-events: none;
+}
+
+@keyframes sparkleMove {
+	0% {
+		transform: translate(0, 0) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(var(--x), var(--y)) scale(0);
+		opacity: 0;
+	}
+}
+
+.container.error {
+	animation: errorFlash 0.55s ease;
+}
+
+input.error {
+	background: rgba(255, 60, 60, 0.15);
+	box-shadow:
+		0 0 0 2px rgba(255, 60, 60, 0.65),
+		0 0 25px rgba(255, 60, 60, 0.35);
+	animation: shake 0.45s ease;
+}
+
+.container.jesus {
+	animation: jesusGlow 1.2s ease;
+}
+
+video.jesus {
+	box-shadow:
+		0 0 0 2px rgba(255, 220, 120, 0.55),
+		0 0 60px rgba(255, 220, 120, 0.35);
+}
+
+button.jesus {
+	background: linear-gradient(135deg, #ffd56a, #ffb300);
+	box-shadow: 0 10px 30px rgba(255, 210, 90, 0.55);
+}
+
+@keyframes shake {
+	0% { transform: translateX(0); }
+	20% { transform: translateX(-8px); }
+	40% { transform: translateX(8px); }
+	60% { transform: translateX(-6px); }
+	80% { transform: translateX(6px); }
+	100% { transform: translateX(0); }
+}
+
+@keyframes errorFlash {
+	0% { background: rgba(255, 60, 60, 0.18); }
+	100% { background: transparent; }
+}
+
+@keyframes jesusGlow {
+	0% { filter: brightness(1); }
+	50% { filter: brightness(1.15); }
+	100% { filter: brightness(1); }
+}
+
+.quest-complete {
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(circle at center, rgba(0, 0, 0, 0.85), #000);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	animation: fadeInOverlay 0.6s ease forwards;
+}
+
+.quest-complete-content {
+	text-align: center;
+	color: #fff;
+	animation: scaleIn 0.8s ease forwards;
+}
+
+.quest-complete h1 {
+	font-size: 36px;
+	margin-bottom: 12px;
+	color: #00ff8c;
+	text-shadow: 0 0 20px rgba(0, 255, 140, 0.6);
+}
+
+.quest-complete p {
+	font-size: 18px;
+	opacity: 0.85;
+}
+
+@keyframes fadeInOverlay {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(0.85);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
