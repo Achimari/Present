@@ -1,8 +1,8 @@
 const steps = [
-	{ video: "1.mp4", answers: ["кухня", "иисус"] },
-	{ video: "2.mp4", answers: ["ванная", "иисус"] },
-	{ video: "3.mp4", answers: ["лестница", "иисус"] },
-	{ video: "4.mp4", answers: ["коробка", "иисус"] }
+	{ video: "https://achimari.github.io/Present/videos/1.MP4", answers: ["кухня", "иисус"] },
+	{ video: "https://achimari.github.io/Present/videos/2.MP4", answers: ["ванная", "иисус"] },
+	{ video: "https://achimari.github.io/Present/videos/3.MP4", answers: ["лестница", "иисус"] },
+	{ video: "https://achimari.github.io/Present/videos/4.MP4", answers: ["коробка", "иисус"] }
 ];
 
 let currentStep = 0;
